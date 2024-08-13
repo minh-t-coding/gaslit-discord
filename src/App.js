@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Gaslight</h1>
+      <h1>Gaslit</h1>
       <div className="checkbox-headers">
         <div className="checkbox-header">Completed</div>
         <div className="checkbox-header">Mission</div>
