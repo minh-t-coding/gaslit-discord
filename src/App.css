@@ -1,13 +1,43 @@
-.App {
-  padding: 20px;
+/* Apply a global reset to ensure consistent full-screen behavior */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #333; /* Background color for the entire page */
+  color: #fff; /* Default text color for the entire page */
+  display: flex; /* Use flexbox to center the app container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
 }
 
+/* Make sure the app container fills the viewport */
+.App {
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Slightly darker shadow for better contrast */
+  max-width: 800px; /* Optional: Limit width for better readability */
+  width: 100%; /* Ensure the width is 100% of the viewport width */
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Ensure header styles are applied correctly */
+h1 {
+  margin: 0 0 20px 0; /* Remove default margin for the header */
+}
+
+/* Flexbox adjustments for full-screen layout */
 .checkbox-headers {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* Adjust column widths for better spacing */
-  gap: 20px; /* Space between columns */
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
   margin-bottom: 20px;
   font-weight: bold;
+  font-size: 16px;
+  color: #ddd; /* Light grey color for headers to stand out on dark background */
 }
 
 .checkbox-header {
@@ -18,13 +48,18 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%; /* Ensure the list takes full width */
 }
 
 .mission-item {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* Align columns for checkboxes and description */
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #444; /* Slightly lighter dark background for list items */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Darker shadow for items */
 }
 
 .checkbox-wrapper {
@@ -35,14 +70,38 @@
 
 .mission-description {
   text-align: center;
-  flex: 1; /* Ensure description takes remaining space */
+  flex: 1;
 }
 
 .mission-item.completed {
-  color: green; /* Green text for completed missions */
+  color: #4caf50;
 }
 
 .mission-item.voided {
-  color: red; /* Red text for voided missions */
-  text-decoration: line-through; /* Strike-through text for voided missions */
+  color: #f44336;
+  text-decoration: line-through;
+}
+
+.mission-item input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+h2 {
+  color: #4caf50;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .checkbox-headers {
+    grid-template-columns: 1fr 2fr;
+    font-size: 14px;
+  }
+
+  .mission-item {
+    grid-template-columns: 1fr 2fr;
+  }
 }
